@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ComponentsComponent } from './components/components.component';
-import { DirectivesDirective } from './directives.directive';
-import { PipesPipe } from './pipes.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
 @NgModule({
   declarations: [
-    ComponentsComponent,
-    DirectivesDirective,
-    PipesPipe
   ],
   imports: [
-    CommonModule
+    CommonModule,
+  ],
+  exports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ]
 })
 export class SharedModule { }

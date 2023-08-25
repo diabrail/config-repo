@@ -1,20 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import {CommonModule} from "@angular/common";
 
-import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import {SharedModule} from "./shared/shared.module";
-import {CoreModule} from "./core/core.module";
+import { AppComponent } from './app.component';
+import { UserModule } from './user/user.module';
+import { SharedModule } from './shared/shared.module';
+
+const appRoutes : Routes = [
+
+]
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    SharedModule,
-    CoreModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
