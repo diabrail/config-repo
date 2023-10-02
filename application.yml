@@ -1,0 +1,45 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: service-vehicule
+  datasource:
+    url: jdbc:postgresql://localhost:5432/sencookseur_db
+    username: postgres
+    password: diabrail
+  cloud:
+    discovery:
+      enabled: true
+    config:
+      enabled: false
+  
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8082/eureka
+
+cookseurpad:
+  app:
+    jwtsecret: xgEQeXHuPq8VdbyYFNkANdudQ53YUn4KEFJJDJJDnn.KADCOOKSEURPAD
+
+
+# /api-docs endpoint custom path
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: openapi, swagger-ui
+openapi:
+  service:
+    title: service-vehicule doc
+    version: 1.0.0
+    url: http://localhost:8081/SERVICE-VEHICULE/
